@@ -1,0 +1,34 @@
+Web dashboard
+k6 provides a locally running web dashboard to help visualize and monitor the k6 test execution results in real-time.
+
+Enable it using the following commands:
+
+Windows Command Prompt (cmd.exe):
+set "K6_WEB_DASHBOARD=true" & k6 run script.js
+ 
+Windows PowerShell:
+$env:K6_WEB_DASHBOARD = "true"; k6 run script.js
+ 
+macOS/Linux: 
+K6_WEB_DASHBOARD=true k6 run script.js
+
+
+
+
+The main idea is that you need to set the environment variable K6_WEB_DASHBOARD to true.
+
+
+
+HTML report
+To generate an HTML report once the test execution finishes, use the K6_WEB_DASHBOARD_EXPORT environment option to specify a path.
+
+
+
+Windows Command Prompt (cmd.exe):
+set "K6_WEB_DASHBOARD=true" & set "K6_WEB_DASHBOARD_EXPORT=k6-report.html" & k6 run script.js
+ 
+Windows PowerShell:
+$env:K6_WEB_DASHBOARD="true"; $env:K6_WEB_DASHBOARD_EXPORT="k6-report.html"; k6 run script.js
+ 
+macOS/Linux: 
+K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=k6-report.html k6 run script.js
